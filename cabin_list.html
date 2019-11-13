@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+{% block content %}
+<script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+
+<script>
+   $(document).on('click','#delete',function(){
+     var a ;
+     a=confirm("Do you really want to delete the user?");
+    if(a==true){
+     var url = "{% url 'accounts:Cabindelete' 1%}"
+     var id = $(this).attr('name')
+
+     document.location.href = url.replace('1',id);
+     }
+    });
+</script>
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1> <span class="table-project-n">Cabin</span> Table</h1>
+                            <a href="/qworky/Cabincreate/"> <button type="button" class="pull-right btn btn-custon-rounded-three btn-primary" style="margin-top: -23px;margin-right: 100px;">Add Cabin</button></a>
+                            <div class="sparkline13-outline-icon">
+                                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                                <select class="form-control" style="width:20%;">
+                                    <option value="">Export Basic</option>
+                                    <option value="all">Export All</option>
+                                    <option value="selected">Export Selected</option>
+                                </select>
+                            </div>
+                                <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" >
+
+
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="id">centre</th>
+                                        <th data-field="name" >code</th>
+                                        <th data-field="type">type</th>
+                                        <th data-field="price">Price</th>
+                                        <th>Actions</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     {% for object in object_list %}
+                                    <tr>
+
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ object.centre}}</td>
+                                        <td>{{ object.code }}</td>
+                                        <td>{{ object.type }}</td>
+                                        <td>{{ object.price }}</td>
+                                         <td>
+                                              <a href="{% url 'accounts:Cabinupdate' object.slug %} " style="color:black; margin-left:8px"><span class="glyphicon glyphicon-edit"></span></i></a>
+                                              <a href="#" style="color:black ;margin_left:8px;" id="delete" name="{{object.id}}" ><span class="glyphicon glyphicon-trash"></span></a>
+                                         </td>
+                                    </tr>
+                                     {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

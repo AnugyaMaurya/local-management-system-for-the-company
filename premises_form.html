@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list basic-res-b-30 shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Centre</h1>
+                            <div style="margin-top:20px;">
+                            {% if not form.instance.pk %}
+                                            <h5>Fill In Information About the New Premises</h5>
+                            {% else %}
+                                             <h5>Update information </h5>
+
+                            {% endif %}
+                            </div>
+                            <div class="sparkline8-outline-icon" ">
+                                <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+
+                        <form  action="" method="POST" encrypt="multipart/form-data">
+                            {% csrf_token %}
+                            <div style="margin-top:20px;"class="col-md-12">{% bootstrap_form form %}</div>
+                            <input type="submit" value="Save" class="btn btn-success" style=" height:30px;width:80px;padding-bottom:2em;">
+                        </form>
+                    </div></div></div></div></div></div>
+{% endblock %}

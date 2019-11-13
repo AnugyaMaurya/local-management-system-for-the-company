@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% load bootstrap4 %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QWORKY- The Coworking Space</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.min.css">
+    <!-- adminpro icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/adminpro-custon-icon.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/meanmenu.min.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.mCustomScrollbar.min.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/animate.css">
+    <!-- jvectormap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/data-table/bootstrap-editable.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
+    <!-- charts CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/c3.min.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <!-- Header top area start-->
+        <div class="content-inner-all">
+            <div class="login-form-area mg-t-30 mg-b-40">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4"></div>
+                          <form class="form-horizontal no-margin" action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="col-md-12">{% bootstrap_form form %}</div>
+                                    <button class="btn btn-info" type="submit">Login</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                        <div class="col-lg-4"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- login End-->
+        </div>
+    </div>
+
+    <!-- jquery
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/jquery.meanmenu.js"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/jquery.scrollUp.min.js"></script>
+    <!-- form validate JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/jquery.form.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.validate.min.js"></script>
+    <script src="{{ STATIC_URL }}js/form-active.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="{{ STATIC_URL }}js/main.js"></script>
+</body>
+
+</html>
